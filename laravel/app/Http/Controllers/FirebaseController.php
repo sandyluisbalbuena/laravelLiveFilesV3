@@ -27,13 +27,13 @@ class FirebaseController extends Controller
     public function postthreaddata(Request $request){
             // return response()->$request;
         $postData = [
-            'categoryId' => $request->,
-			'title' => $request->,
-			'slug' => $request->,
-			'content' => $request->, 
-			'userId' => $request->,
-			'createdAt' => $request->,
-			'updatedAt' => $request->,
+            'categoryId' => $request->categoryId,
+			'title' => $request->title,
+			'slug' => $request->slug,
+			'content' => $request->content, 
+			'userId' => $request->userId,
+			'createdAt' => $request->createdAt,
+			'updatedAt' => $request->updatedAt,
         ];
 
         $postRef = $this->database->getReference($this->threadtable)->push($postData);
